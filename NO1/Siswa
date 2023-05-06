@@ -1,0 +1,70 @@
+//Class: sebuah blueprint atau cetakan yang digunakan untuk membuat objek. Di dalam class terdapat variabel dan method yang menentukan sifat dan perilaku objek yang dibuat.
+//Object:sebuah instansi dari sebuah class. Ketika sebuah objek dibuat, maka objek tersebut akan memiliki variabel dan method yang telah ditentukan oleh class.
+//Constructor: Constructor adalah sebuah method yang digunakan untuk menginisialisasi objek dari sebuah class. Constructor memiliki nama yang sama dengan nama class dan tidak memiliki nilai kembali (return value).
+//Method Overloading: Method overloading adalah kemampuan untuk membuat beberapa method dengan nama yang sama namun dengan parameter yang berbeda. Ketika method dipanggil, Java akan memilih method yang sesuai dengan jumlah dan tipe parameter yang dikirimkan.
+//Method Setter dan Getter: Method setter dan getter digunakan untuk mengatur dan mendapatkan nilai dari variabel pada objek. Method setter digunakan untuk mengatur nilai variabel sedangkan method getter digunakan untuk mendapatkan nilai variabel.
+public class Siswa {
+    private String nama;
+    private int umur;
+    private double nilai;
+
+    // Constructor
+    public Siswa(String nama, int umur, double nilai) {
+        this.nama = nama;
+        this.umur = umur;
+        this.nilai = nilai;
+    }
+
+    public Siswa() {
+        this.nama = "";
+        this.umur = 0;
+        this.nilai = 0.0;
+    }
+
+    // Method setter
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    // Method getter
+    public String getNama() {
+        return nama;
+    }
+
+    // Method setter untuk variabel umur
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+
+    // Method getter untuk variabel umur
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setNilai(double nilai) {
+        this.nilai = nilai;
+    }
+
+    public double getNilai() {
+        return nilai;
+    }
+
+    // Method overloading
+    public void tampilkanInfo() {
+        System.out.println("Nama: " + nama);
+        System.out.println("Umur: " + umur + " tahun");
+        System.out.println("Nilai: " + nilai);
+    }
+
+    public static void main(String[] args) {
+        // Membuat objek Siswa menggunakan constructor dengan 3 parameter
+        Siswa siswa1 = new Siswa("Imanda", 17, 85.5);
+        siswa1.tampilkanInfo();
+
+        Siswa siswa2 = new Siswa();
+        siswa2.setNama("David");
+        siswa2.setUmur(17);
+        siswa2.setNilai(90.0);
+        siswa2.tampilkanInfo();
+    }
+}
